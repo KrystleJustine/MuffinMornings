@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_192313) do
+ActiveRecord::Schema.define(version: 2019_03_04_221614) do
+
+  create_table "days", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "muffin_types", force: :cascade do |t|
     t.string "calories"
     t.string "flavor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_days", force: :cascade do |t|
+    t.integer "day_id_id"
+    t.integer "order_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["day_id_id"], name: "index_order_days_on_day_id_id"
+    t.index ["order_id_id"], name: "index_order_days_on_order_id_id"
   end
 
   create_table "orders", force: :cascade do |t|
