@@ -1,0 +1,2 @@
+class OrderDaysController < ApplicationController
+end
