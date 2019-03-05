@@ -15,7 +15,7 @@ before_action :get_user, only: [:show]
 
   def create
     @user = User.create(user_params)
-      redirect_to user_path(@user)
+      redirect_to orders_path
       #needs to go to order index page
   end
 
