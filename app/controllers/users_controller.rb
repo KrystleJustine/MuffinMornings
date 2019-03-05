@@ -16,6 +16,7 @@ before_action :get_user, only: [:show]
   def create
     @user = User.create(user_params)
       redirect_to user_path(@user)
+      #needs to go to order index page
   end
 
   private
@@ -24,7 +25,7 @@ before_action :get_user, only: [:show]
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
+    params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :username, :password)
   end
 
 end
