@@ -1,0 +1,2 @@
+class MuffinTypesController < ApplicationController
+end
