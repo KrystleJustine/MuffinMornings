@@ -3,7 +3,9 @@ class User < ApplicationRecord
   has_many :muffin_types, through: :orders
   has_many :days, through: :orders
 
-has_secure_password
+  validates :username, {presence: true, uniqueness: true}
+
+  has_secure_password
 
   def name
     "#{first_name} #{last_name}"

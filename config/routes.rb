@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
     resources :users
-    resources :orders, only: [:index]
+    resources :orders
 
         get '/login', to: 'login#new'
         post   '/login',   to: 'login#create'
