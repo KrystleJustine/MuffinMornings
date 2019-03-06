@@ -15,10 +15,13 @@ before_action :get_order, only: [:show]
 
   end
   #
-  # def new
-  #   @order = Order.new
-  #   @muffins = MuffinType.all
-  # end
+   # def new
+   #   @order = Order.new
+   #   @muffins = MuffinType.all
+   #   @days = Day.all
+   #
+   #   @order_day = OrderDay.new
+   # end
 
   def create
     byebug
