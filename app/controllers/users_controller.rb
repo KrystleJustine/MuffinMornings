@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
 
-before_action :get_user, only: [:show]
-
   def index
     @users = User.all
   end
 
   def show
+    @user = User.find(params[:id])
+
+
+
+    @order = Order.new
+    @muffins = MuffinType.all
+    @days = Day.all
+    
+    @order_day = OrderDay.new
   end
 
   def new
@@ -14,17 +21,20 @@ before_action :get_user, only: [:show]
   end
 
   def create
-    @user = User.create(user_params)
-      redirect_to user_path(@user)
+    @user = User.new(user_params)
+   if @user.save
+     log_in_user(@user)
+     redirect_to orders_path
+   else
+     flash[:errors] = @user.errors.full_messages
+     redirect_to new_login_path
+   end
   end
 
   private
-  def get_user
-    @user = User.find(params[:id])
-  end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
+    params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :username, :password)
   end
 
 end
