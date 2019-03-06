@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# User.destroy_all
+# MuffinType.destroy_all
+# Order.destroy_all
+# Day.destroy_all
+
 
 john = User.create(first_name: 'John', last_name: 'Smith', email: 'johnsmith@gmail.com', phone_number: 5555555555, username: "john", password_digest: "1234")
 jane = User.create(first_name: 'Jane', last_name: 'Smith', email: 'janesmith@gmail.com', phone_number: 6466466464, username: "jane", password_digest: "password")

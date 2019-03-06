@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
 before_action :get_order, only: [:show]
 
   def index
+    # byebug
     @orders = Order.all
 
     @my_orders = @orders.select do |order|
