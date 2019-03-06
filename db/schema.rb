@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 2019_03_04_221614) do
   end
 
   create_table "order_days", force: :cascade do |t|
-    t.integer "day_id_id"
-    t.integer "order_id_id"
+    t.integer "day_id"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["day_id_id"], name: "index_order_days_on_day_id_id"
-    t.index ["order_id_id"], name: "index_order_days_on_order_id_id"
+    t.index ["day_id"], name: "index_order_days_on_day_id"
+    t.index ["order_id"], name: "index_order_days_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|

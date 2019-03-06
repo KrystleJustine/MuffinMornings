@@ -4,15 +4,15 @@ class LoginController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:login][:username])
+    @user = User.find_by(username: params[:username])
     # byebug #USER IS NILL COME BQCK AND FIX
-    # byebug
-   if @user && @user.authenticate(params[:login][:password])
+
+   if @user && @user.authenticate(params[:password])
      log_in_user(@user)
      redirect_to orders_path
    else
      flash[:errors] = "The username or password you entered was not correct."
-     redirect_to '/login'
+     redirect_to new_login_path
    end
   end
 
