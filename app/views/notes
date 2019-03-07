@@ -1,0 +1,50 @@
+Session hash
+
+sessions are encrypted
+
+placed under the user's create method
+after the user logs in... we need to update the page to show they are actually logged in
+
+in application update with unless logged in
+
+
+in layour... make sure theres a before action that sets the instance to something
+
+Application Controller:
+site wide before action... takes place on every page...
+
+ the way to remember we're passed in
+
+ when the person comes back... we use the session to keep the persons information
+ put in application controller
+ create helper method in login controller
+
+
+       destroy  method in controller...
+       should be able to redirect
+  in the controller make sure you put skip before action :verify_authenticity_token
+
+  #to logout
+  def destroy
+  session[:user_id] = nil
+  redirect to the index
+  end
+  put into application controller as a form tag
+  make sure the routes are uodated
+
+  delete "/logout" to logbdestry
+
+  if @logged_in && @vote.user_id == @logged_in_user_id
+  @vote.destroy
+  so if we're logged in and you have permission then delete
+  otherwise... dontt
+
+  else flash[:error]= ["This isnt your account"]
+  redirect_to new_login_path
+  return
+  authenticate when you go to create update and delete actions
+log in...
+
+index for votes
+if logged in do votes
+else redirect to login path

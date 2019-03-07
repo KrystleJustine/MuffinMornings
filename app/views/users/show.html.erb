@@ -2,7 +2,7 @@
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email %></p>
 <p>Phone: <%= @user.phone_number %></p>
-<%= button_tag "Edit User" %>
+<%= button_to "Edit User", user_path %>
 
 <ul>
   <% @days.each do |day| %>

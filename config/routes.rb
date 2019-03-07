@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-    resources :users
-    resources :orders, only: [:index, :new, :create]
+   resources :users, only: [:new, :edit, :show, :update]
+   resources :orders, only: [:index, :new, :create]
    resources :login, only: [:new, :create, :destroy]
 
+    root "users#index"
         #  get '/login', to: 'login#new'
         #  post   '/login',   to: 'login#create'
         # delete '/logout',  to: 'login#destroy'

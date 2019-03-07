@@ -12,8 +12,8 @@ Order.destroy_all
 Day.destroy_all
 
 
-john = User.create(first_name: 'John', last_name: 'Smith', email: 'johnsmith@gmail.com', phone_number: 5555555555, username: "john", password_digest: "1234")
-jane = User.create(first_name: 'Jane', last_name: 'Smith', email: 'janesmith@gmail.com', phone_number: 6466466464, username: "jane", password_digest: "password")
+john = User.create(first_name: 'John', last_name: 'Smith', email: 'johnsmith@gmail.com', phone_number: 5555555555, username: "john", password: "1234")
+jane = User.create(first_name: 'Jane', last_name: 'Smith', email: 'janesmith@gmail.com', phone_number: 6466466464, username: "jane", password: "password")
 
 MuffinType.create(calories: 200, flavor: 'Chocolate')
 MuffinType.create(calories: 150, flavor: 'Strawberry')

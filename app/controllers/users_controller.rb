@@ -1,18 +1,14 @@
 class UsersController < ApplicationController
+  before_action :get_user, only: [:edit, :show, :update]
 
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
-
-
-
     @order = Order.new
     @muffins = MuffinType.all
     @days = Day.all
-    
     @order_day = OrderDay.new
   end
 
@@ -31,10 +27,23 @@ class UsersController < ApplicationController
    end
   end
 
+  def edit
+  end
+
+  def update
+    @user.update(user_params)
+    redirect_to @user
+  end
+
+
   private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :username, :password)
+  end
+
+  def get_user
+    @user = User.find(params[:id])
   end
 
 end
