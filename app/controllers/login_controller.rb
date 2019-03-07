@@ -21,9 +21,5 @@ class LoginController < ApplicationController
     redirect_to new_user_path
   end
 
-  # private
-  # def login_params
-  #   params.require(:login).permit(:username, :password)
-  # end
 
 end

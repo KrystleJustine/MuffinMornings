@@ -1,7 +1,5 @@
-# needs a search bar to search by types of muffins
-
-<%= button_to "Choose your Muffin!", user_path(@logged_in_user), :method => :get %>
-
+<%= button_to "Choose your Muffin!", user_path(@logged_in_user.id), :method => :get %>
+<%#= button_to "Choose your Muffin!", user_path(@user), :method => :get %>
 <h1>Create your review!</h1>
 <!-- GET /orders/:id/edit, to orders#edit -->
 
