@@ -1,8 +1,11 @@
-
+<%# SEE AND EDIT USER INFO %>
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email %></p>
 <p>Phone: <%= @user.phone_number %></p>
 <%= button_to "Update My Info", edit_user_path, method: :get %>
+
+
+<%# CREATING ORDERS FOR THE WEEK %>
 <ul>
   <% if flash[:message] != nil %>
     <%= flash[:message] %>
@@ -10,14 +13,24 @@
 
   <% @days.each do |day| %>
 
-    <% if !@logged_in_user.days.include?(day)   %>
+    <% if !@logged_in_user.days.include?(day) %>
       <h1><li><%= day.name %></li></h1>
       <%= form_for @order do |f| %>
       <%= f.hidden_field :day_id, value: day.id %>
       <%= f.label :muffin_type_id %>
       <%= f.collection_select :muffin_type_id, @muffins, :id, :flavor %>
       <%= f.submit %>
-    <% end %>
-    <% end %>
+
+      <% end %>
+      <% end %>
   <% end %>
+</ul>
+
+<%# SHOW ALL EXSITING ORDERS %>
+<ul>
+
+<% @user.orders.each do |order| %>
+<li> Flavor: <%= order.muffin_type.flavor %> </li>
+<li> Day: <%= order.day.name %> </li>
+<% end %>
 </ul>
