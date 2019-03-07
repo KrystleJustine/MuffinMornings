@@ -1,13 +1,13 @@
 class OrdersController < ApplicationController
 
-before_action :get_order, only: [:show]
+before_action :get_order, only: [:show, :update, :edit]
 
   def index
     @orders = Order.all
+    @my_orders = @orders.select do |order|
+        order.user == @logged_in_user
 
-    # @my_orders = @orders.select do |order|
-    #   order.user == @logged_in_user
-    # end
+     end
   end
 
   def show
@@ -28,6 +28,15 @@ before_action :get_order, only: [:show]
      end
   end
 
+  def edit
+
+  end
+
+  def update
+     @order.update(order_params)
+     redirect_to orders_path
+  end
+
 private
 
   def get_order
@@ -35,6 +44,6 @@ private
   end
 
   def order_params
-    params.require(:order).permit(:muffin_type_id, :day_id)
+    params.require(:order).permit(:muffin_type_id, :day_id, :stars, :title, :review, :muffin_url)
   end
 end

@@ -2,5 +2,10 @@
 <%#= button_to "Choose your Muffin!", user_path(@user), :method => :get %>
 <h1>Create your review!</h1>
 <!-- GET /orders/:id/edit, to orders#edit -->
+<h1>Reviews</h1>
 
-<%= collection_select(:order, :muffin_type_id, MuffinType.all, :id, :flavor, :prompt => "Select your muffin to review") %><br><br>
+
+<% @orders.each do |order| %>
+Title: <%= order.title %> <br>  Stars: <%=order.stars %> <br> Review: <%= order.review %> <br><br>
+<% end %>
+<%=  %>

@@ -28,8 +28,8 @@
 
 <%# SHOW ALL EXSITING ORDERS %>
 <ul>
-
-<% @user.orders.each do |order| %>
-<li> Flavor: <%= order.muffin_type.flavor %> Day: <%= order.day.name %>  </li>
-<% end %>
+  <% @user.orders.each do |order| %>
+  <li> Flavor: <%= order.muffin_type.flavor %> Day: <%= order.day.name %>  </li>
+  <%= link_to "Add Review", edit_order_path(order) %>
+  <% end %>
 </ul>

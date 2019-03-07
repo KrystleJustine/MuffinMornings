@@ -1,0 +1,16 @@
+<%= form_for @order do |f| %>
+  <label>Add Picture </label><br>
+  <%= f.text_field :muffin_url %><br><br>
+
+  <%= f.label :stars %><br>
+  <%= f.text_field :stars %><br><br>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br><br>
+
+  <%= f.label :review %><br>
+  <%= f.text_field :review %><br><br>
+
+  <%= f.submit %>
+
+<% end %>
