@@ -30,7 +30,6 @@
 <ul>
 
 <% @user.orders.each do |order| %>
-<li> Flavor: <%= order.muffin_type.flavor %> </li>
-<li> Day: <%= order.day.name %> </li>
+<li> Flavor: <%= order.muffin_type.flavor %> Day: <%= order.day.name %>  </li>
 <% end %>
 </ul>

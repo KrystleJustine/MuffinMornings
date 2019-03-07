@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_221614) do
+ActiveRecord::Schema.define(version: 2019_03_04_221336) do
 
   create_table "days", force: :cascade do |t|
     t.string "name"
@@ -25,24 +25,17 @@ ActiveRecord::Schema.define(version: 2019_03_04_221614) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_days", force: :cascade do |t|
-    t.integer "day_id"
-    t.integer "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["day_id"], name: "index_order_days_on_day_id"
-    t.index ["order_id"], name: "index_order_days_on_order_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "muffin_type_id"
+    t.integer "day_id"
     t.text "review"
     t.integer "stars"
     t.string "muffin_url"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["day_id"], name: "index_orders_on_day_id"
     t.index ["muffin_type_id"], name: "index_orders_on_muffin_type_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end

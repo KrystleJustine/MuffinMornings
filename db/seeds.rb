@@ -22,14 +22,12 @@ MuffinType.create(calories: 150, flavor: 'Banana')
 MuffinType.create(calories: 150, flavor: 'Red Velvet')
 
 
-
-Order.create(user: john, muffin_type: MuffinType.first, review: 'Super', stars: 5, muffin_url: 'https://thebusybaker.ca/wp-content/uploads/2018/08/best-ever-greek-yogurt-chocolate-chip-muffins-title.jpg ', title: 'YUMMMERS')
-Order.create(user: jane, muffin_type: MuffinType.second , review: 'Gross', stars: 2, muffin_url: 'https://www.justsotasty.com/wp-content/uploads/2018/04/Strawberry-Muffins-9.jpg', title: 'NEVER ORDERING AGAIN!')
-Order.create(user: john, muffin_type: MuffinType.last, review: 'Delicious', stars: 5, muffin_url: 'https://www.browneyedbaker.com/wp-content/uploads/2010/11/red-velvet-cupcakes-49-600.jpg', title: 'Loved It!')
-
-
 Day.create(name: 'Monday')
 Day.create(name: 'Tuesday')
 Day.create(name: 'Wednesday')
 Day.create(name: 'Thursday')
 Day.create(name: 'Friday')
+
+Order.create(user: john, muffin_type: MuffinType.first, day: Day.all.sample, review: 'Super', stars: 5, muffin_url: 'https://thebusybaker.ca/wp-content/uploads/2018/08/best-ever-greek-yogurt-chocolate-chip-muffins-title.jpg ', title: 'YUMMMERS')
+Order.create(user: jane, muffin_type: MuffinType.second, day: Day.all.sample, review: 'Gross', stars: 2, muffin_url: 'https://www.justsotasty.com/wp-content/uploads/2018/04/Strawberry-Muffins-9.jpg', title: 'NEVER ORDERING AGAIN!')
+Order.create(user: john, muffin_type: MuffinType.last, day: Day.all.sample, review: 'Delicious', stars: 5, muffin_url: 'https://www.browneyedbaker.com/wp-content/uploads/2010/11/red-velvet-cupcakes-49-600.jpg', title: 'Loved It!')

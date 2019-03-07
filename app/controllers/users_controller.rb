@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @order = Order.new
     @muffins = MuffinType.all
     @days = Day.all
-    @order_day = OrderDay.new
+    # @order_day = OrderDay.new
   end
 
   def new
