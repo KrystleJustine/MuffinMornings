@@ -4,24 +4,9 @@
 <p>Phone: <%= @user.phone_number %></p>
 <%= button_tag "Edit User" %>
 
-
-<h1>MONDAY</h1>
-<%= form_for @order do |f| %>
-<%= f.label :muffin_type_id %>
-<%= f.collection_select :muffin_type_id, @muffins, :id, :flavor %>
-<%= f.submit %>
-<% end %>
-
-<h1>TUESDAY</h1>
-<%= form_for @order do |f| %>
-<%= f.label :muffin_type_id %>
-<%= f.collection_select :muffin_type_id, @muffins, :id, :flavor %>
-<%= f.submit %>
-<% end %>
-
 <ul>
   <% @days.each do |day| %>
-    <li>name: <%= day.name %> ID: <%= day.id %></li>
+    <h1><li><%= day.name %></li></h1>
 
     <%= form_for @order do |f| %>
     <%#f.hidden_field :day_id, value: day.id %>
