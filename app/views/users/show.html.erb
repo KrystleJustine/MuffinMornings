@@ -4,14 +4,20 @@
 <p>Phone: <%= @user.phone_number %></p>
 <%= button_to "Update My Info", edit_user_path, method: :get %>
 <ul>
-  <% @days.each do |day| %>
-    <h1><li><%= day.name %></li></h1>
+  <% if flash[:message] != nil %>
+    <%= flash[:message] %>
+  <% end %>
 
-    <%= form_for @order do |f| %>
-    <%#f.hidden_field :day_id, value: day.id %>
-    <%= f.label :muffin_type_id %>
-    <%= f.collection_select :muffin_type_id, @muffins, :id, :flavor %>
-    <%= f.submit %>
+  <% @days.each do |day| %>
+
+    <% if !@logged_in_user.days.include?(day)   %>
+      <h1><li><%= day.name %></li></h1>
+      <%= form_for @order do |f| %>
+      <%= f.hidden_field :day_id, value: day.id %>
+      <%= f.label :muffin_type_id %>
+      <%= f.collection_select :muffin_type_id, @muffins, :id, :flavor %>
+      <%= f.submit %>
+    <% end %>
     <% end %>
   <% end %>
 </ul>

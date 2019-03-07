@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
    resources :users, only: [:new, :edit, :show, :update, :create]
-   resources :orders, only: [:index, :new, :create]
+   resources :orders, only: [:index, :show, :new, :create]
    resources :login, only: [:new, :create, :destroy]
 
     # root "users#index"

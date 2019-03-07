@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @orders = Order.all
+
+    @my_orders = @orders.select do |order|
+      order.user == @logged_in_user
+    end
   end
 
   def show
