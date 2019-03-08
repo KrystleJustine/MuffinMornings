@@ -1,4 +1,9 @@
 <div class="container text-center">
+
+  <div class="jumbotron">
+    <h1 class="display-4 text-center">Hello, <%= @logged_in_user.name %>!</h1>
+  </div>
+
   <%= button_to "Choose your Muffin!", user_path(@logged_in_user.id), :method => :get , class:"btn btn-primary" %>
 <%#= button_to "Choose your Muffin!", user_path(@user), :method => :get %>
 
