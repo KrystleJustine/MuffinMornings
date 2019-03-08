@@ -42,25 +42,6 @@
         </ul>
       </div>
     </nav>
-    <nav class="auth-nav">
-      <ul>
-        <% unless @logged_in %>
-        <li>
-          <%= link_to "Sign up", new_user_path %>
-        </li>
-        <li>
-          <%= link_to "Log in", new_login_path %>
-        </li>
-        <% else #logged in %>
-          <li>
-            Logged in as <%= @logged_in_user.username %>
-          </li>
-          <li>
-            <%= button_to 'Logout', login_path(@logged_in_user) , method: :delete %>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
   </header>
   <%= yield %>
 </body>
