@@ -2,7 +2,7 @@
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email %></p>
 <p>Phone: <%= @user.phone_number %></p>
-<%= button_to "Update My Info", edit_user_path, method: :get %>
+<%= button_to "Update My Info", edit_user_path, method: :get, class:"btn btn-primary" %>
 
 
 <%# CREATING ORDERS FOR THE WEEK %>
@@ -26,6 +26,7 @@
   <% end %>
 </ul>
 
+
 <%# SHOW ALL EXSITING ORDERS %>
 <ul>
   <% @user.orders.each do |order| %>
@@ -33,3 +34,6 @@
   <%= link_to "Add Review", edit_order_path(order) %>
   <% end %>
 </ul>
+
+
+<%= link_to "Home Page", orders_path %>
