@@ -4,9 +4,18 @@
 
   <h1>Reviews</h1>
 
-
-
+<div class="row">
   <% @new_orders.each do |order| %>
-    Title: <%= order.title %> <br>  Stars: <%=order.stars %> <br> Review: <%= order.review %> <br><br>
+    <div class="col-sm-6">
+      <div class="card">
+        <img src="<%= order.muffin_url %>" class="card-img-top" alt=" ">
+        <div class="card-body">
+          <h5 class="card-title"><%= order.title %></h5>
+          <p class="card-text"><%= order.review %></p>
+        </div>
+      </div>
+    </div>
   <% end %>
+</div>
+
 </div>
