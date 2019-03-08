@@ -4,6 +4,10 @@ before_action :get_order, only: [:show, :update, :edit]
 
   def index
     @orders = Order.all
+    @new_orders = @orders.select do |order|
+      order.title && order.stars && order.review
+    end
+
     @my_orders = @orders.select do |order|
         order.user == @logged_in_user
 

@@ -1,22 +1,61 @@
-<% provide(:title, "Log in") %>
-<% if flash[:errors] %>
-  <p><%= flash[:errors] %></p>
-<% end %>
-<h1>Log in</h1>
+<html lang="en">
+<head>
+  <link href="<%= asset_path('login.scss') %>" rel="stylesheet">
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_tag login_index_path do %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-      <%= label_tag :username%>
-      <%= text_field_tag :username %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  </style>
+</head>
 
-      <%= submit_tag "Log in"%>
+<body class="text-center">
+
+<!--<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>-->
+<!--<label for="inputUsername" class="sr-only">Username</label>-->
+<!--<input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>-->
+<!--<label for="inputPassword" class="sr-only">Password</label>-->
+<!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
+
+  <%= form_tag login_index_path, class: "form-signin" do %>
+  <img class="mb-4" src="https://www.mrsfields.com/files/products/547_300x300.jpg" alt="" width="200" height="200">
+  <h1 class="h3 mb-3 font-weight-normal">Muffin Mornings</h1>
+  <p class="h3 mb-3 font-weight-normal">Please Login</p>
+
+      <%= label_tag :username, '', class: "sr-only"%>
+      <%= text_field_tag :username, '', class: "form-control", placeholder: "Username" %>
+
+      <%= label_tag :password, '', class: "sr-only" %>
+      <%= password_field_tag :password, '', class:"form-control", placeholder: "Password" %>
+
+      <%= submit_tag "Log in", class: "btn btn-lg btn-primary btn-block"%>
+  <p class="h5 mb-3 font-weight-normal">New user? <%= link_to "Sign up now!", new_user_path %></p>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-  </div>
-</div>
+
+    <% if flash[:errors] %>
+      <p><%= flash[:errors] %></p>
+    <% end %>
+
+
+</body>
+</html>
+<!--</div>-->
+<!--</div>-->

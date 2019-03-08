@@ -1,2 +1,0 @@
-class OrderDaysController < ApplicationController
-end

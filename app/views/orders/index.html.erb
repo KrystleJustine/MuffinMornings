@@ -1,11 +1,12 @@
-<%= button_to "Choose your Muffin!", user_path(@logged_in_user.id), :method => :get %>
+<div class="container text-center">
+  <%= button_to "Choose your Muffin!", user_path(@logged_in_user.id), :method => :get , class:"btn btn-primary" %>
 <%#= button_to "Choose your Muffin!", user_path(@user), :method => :get %>
-<h1>Create your review!</h1>
-<!-- GET /orders/:id/edit, to orders#edit -->
-<h1>Reviews</h1>
+
+  <h1>Reviews</h1>
 
 
-<% @orders.each do |order| %>
-Title: <%= order.title %> <br>  Stars: <%=order.stars %> <br> Review: <%= order.review %> <br><br>
-<% end %>
-<%=  %>
+
+  <% @new_orders.each do |order| %>
+    Title: <%= order.title %> <br>  Stars: <%=order.stars %> <br> Review: <%= order.review %> <br><br>
+  <% end %>
+</div>
