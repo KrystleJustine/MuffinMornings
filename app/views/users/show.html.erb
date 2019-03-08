@@ -33,7 +33,7 @@
 <ul>
   <% @user.orders.each do |order| %>
 <p> Yum! You got a <%= order.muffin_type.flavor %> flavored muffin on <%= order.day.name %>. You can write a review if you would like.</p>
-  <button type="button" class="btn btn-secondary btn-sm" href=<%= edit_order_path(order) %>>Add Review</button>
+<a class="btn btn-secondary btn-sm" href=<%= edit_order_path(order) %> role="button">Add Review</a>
   <% end %>
 </ul>
 
