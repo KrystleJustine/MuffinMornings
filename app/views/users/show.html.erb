@@ -8,7 +8,7 @@
 
 
 <%# CREATING ORDERS FOR THE WEEK %>
-<ul>
+<ul style="list-style-type: none">
   <% if flash[:message] != nil %>
     <%= flash[:message] %>
   <% end %>
@@ -36,6 +36,3 @@
 <a class="btn btn-secondary btn-sm" href=<%= edit_order_path(order) %> role="button">Add Review</a>
   <% end %>
 </ul>
-
-
-<%= link_to "Home Page", orders_path %>

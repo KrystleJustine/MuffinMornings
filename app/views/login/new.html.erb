@@ -27,13 +27,6 @@
 </head>
 
 <body class="text-center">
-
-<!--<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>-->
-<!--<label for="inputUsername" class="sr-only">Username</label>-->
-<!--<input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>-->
-<!--<label for="inputPassword" class="sr-only">Password</label>-->
-<!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
-
   <%= form_tag login_index_path, class: "form-signin" do %>
   <img class="mb-4" src="https://www.mrsfields.com/files/products/547_300x300.jpg" alt="" width="200" height="200">
   <h1 class="h3 mb-3 font-weight-normal">Muffin Mornings</h1>
@@ -48,14 +41,12 @@
       <%= submit_tag "Log in", class: "btn btn-lg btn-primary btn-block"%>
   <p class="h5 mb-3 font-weight-normal">New user? <%= link_to "Sign up now!", new_user_path %></p>
     <% end %>
-
-
-    <% if flash[:errors] %>
-      <p><%= flash[:errors] %></p>
-    <% end %>
+    <div class="handle-error">
+      <% if flash[:errors] %>
+        <p class="h5"><%= flash[:errors] %></p>
+      <% end %>
+    </div>
 
 
 </body>
 </html>
-<!--</div>-->
-<!--</div>-->

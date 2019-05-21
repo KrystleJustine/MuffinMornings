@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @orders = Order.all
 
     @my_orders = @orders.select do |order|
-      order.user == @logged_in_user
+    order.user == @logged_in_user
     end
   end
 
