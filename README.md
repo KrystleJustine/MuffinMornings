@@ -1,6 +1,6 @@
 # README
 
-To start Backend run the following in your terminal and then follow https://github.com/nela94/pet-me-frontend/tree/manuelaOne ReadMe.
+To start Backend run the following in your terminal.
 
 * rails db:create
 
@@ -9,3 +9,5 @@ To start Backend run the following in your terminal and then follow https://gith
 * rails db:speed
 
 * rails s
+
+Make sure to be on the URL http://localhost/3000/login/new
