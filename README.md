@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To start Backend run the following in your terminal and then follow https://github.com/nela94/pet-me-frontend/tree/manuelaOne ReadMe.
 
-Things you may want to cover:
+* rails db:create
 
-* Ruby version
+* rails db:migrate
 
-* System dependencies
+* rails db:speed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails s
